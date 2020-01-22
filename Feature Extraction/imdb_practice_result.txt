@@ -1,0 +1,10 @@
+Numpy array has shape (500, 176) and dtype int64
+Most common word: the, count: 9014
+No instances found for: 
+  nineteen
+  fifty
+Sum of raw count matrix: 64624
+Sum of binary matrix: 21182
+Sum of normed matrix: 500.0
+Shape after removing features that occur < 100 times: (500, 81)
+Split checks passed!
