@@ -58,10 +58,18 @@ def main(data_file, vocab_path):
 
 
     # TODO: train a Bernoulli NB model, evaluate on validation split
-    nb_ber = BernoulliNB()
-    nb_ber.fit(train[0], train[1])
+    ### make a binary feature vector
+    train_bi = np.copy(train[0])
+    for i in range(len(train_bi)):
+        train_bi[i] = np.where(train_bi[i] > 0, 1, 0)
+    test_bi = np.copy(test[0])
+    for i in range(len(test_bi)):
+        test_bi[i] = np.where(test_bi[i] > 0, 1, 0)
 
-    pred_ber = nb_ber.predict(test[0])
+    nb_ber = BernoulliNB()
+    nb_ber.fit(train_bi, train[1])
+
+    pred_ber = nb_ber.predict(test_bi)
     acc_ber = metrics.accuracy_score(test[1], pred_ber)
     print(f"Accuracy of Bernoulli NB method: {acc_ber:0.03f}")
 
