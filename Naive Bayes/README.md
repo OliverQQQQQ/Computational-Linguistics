@@ -1,7 +1,7 @@
 # Naive Bayes for authorship attribution
 
 # Experimental results
-Data used for experiemental are 66 federalist papers written by the author 'Hamilton' and 'Madison'(`federalist_dev.json`). Purpose of this experiement is to predict the authorship using the text. There three methods are adopted for the prediction. Baseline experiment uses zero rule, Hamilton is predict by the zero rule since he has the most papers in this dataset. Besides that, Multinomial Naive Bayes and Bernoulli Naive Bayes are used as well. Count feature and binary feature are fed to the model repectively.
+Data used for experiemental are 66 federalist papers written by the author 'Hamilton' and 'Madison'(`federalist_dev.json`). Purpose of this experiement is to predict the authorship using the text. There three methods are adopted for the prediction. Baseline experiment uses zero rule, Hamilton is predict by the zero rule since he has the most papers in this dataset. Besides that, Multinomial Naive Bayes and Bernoulli Naive Bayes are used as well. Count feature and binary feature are fed to the model repectively. There are 176 features are selected, these feature can be found in `ewl_function_words.txt`.
 
 To measure and compare results of different methods, accuracy is used as the metric. Results showed that both Naive Bayes methods have very high accuracy, which are consitently being above 0.85. Zero rule methods yeilds a result range from 0.5 to 0.75, which performs worse than the other two NB methods.
 
